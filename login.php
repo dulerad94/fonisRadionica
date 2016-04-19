@@ -20,6 +20,7 @@ else {
     $fp = fopen('user.json', 'w');
     fwrite($fp, json_encode($user));
     fclose($fp);
+    $_SESSION['user']=serialize($user);
     print "success";
 }
 ?>

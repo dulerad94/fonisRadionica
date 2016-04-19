@@ -5,6 +5,7 @@
  * Date: 19.4.2016.
  * Time: 14.41
  */
+require_once "connection.php";
 class User{
     public $id;
     public $name;
@@ -43,9 +44,7 @@ class User{
         $conn->query($sql);
     }
     static function findUser($mail,$pass){
-        require_once "connection.php";
         global $conn;
-
         $sql="Select * from User where Mail='$mail' and Pass='$pass'";
 
         $result=$conn->query($sql);
@@ -58,10 +57,11 @@ class User{
     }
     function changeData($data){
         global $conn;
-        $sql="UPDATE User set Name=".$data['name'].",Surname=".$data['surname']."Pass=".$data['pass'].
-            "DayOfBirth=".$data['$this->dayOfBirth']."photo=".$data['photo']."where UserId=".$data['userID'];
+        $sql="UPDATE User set Name=".$data['name'].",Surname=".$data['surname'].",Pass=".$data['pass'].
+            ",DayOfBirth=".$data['dayOfBirth'].",photo=".$data['photo']."where UserId=".$data['userID'];
         $conn->query($sql);
     }
+
 
 }
 
