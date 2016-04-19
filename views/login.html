@@ -1,0 +1,31 @@
+<div layout="column" ng-cloak="" class="md-inline-form inputdemoBasicUsage" style="height: 100px">
+
+  <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding="">
+    <div style="margin-left: 55%;">
+      <md-input-container>
+        <label> Email: {{user.mail}}</label>
+        <input ng-model="user.mail" type="email">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Password</label>
+        <input ng-model="user.pass" type="password">
+      </md-input-container>
+    </div>
+
+    <md-button class="md-raised md-primary" ng-click="login(user)">Primary</md-button>
+
+  </md-content>
+
+  
+
+</div>
+
+<div>
+  <h1>Welcome</h1>
+  <h2> {{user.mail}} </h2>
+
+</div>
+
+
+
